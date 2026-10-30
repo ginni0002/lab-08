@@ -56,7 +56,7 @@ class WizardTest {
     }
 
     @Test
-    fun train_amountOfManaPresentLessThanMinimum() {
+    fun train_spellPowerIncrementsAndManaIsConsumed() {
         evilWizard.mana = 5
         evilWizard.spellPower = 0
         evilWizard.train()
