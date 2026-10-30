@@ -46,4 +46,21 @@ class WizardTest {
 
         assertEquals(70, evilWizard.mana)
     }
+
+    @Test
+    fun train_amountOfManaPresentLessThanMinimum() {
+        evilWizard.mana = 1
+        evilWizard.spellPower = 0
+        evilWizard.train()
+        assertEquals(0, evilWizard.spellPower) // mana and spell power should stay same
+    }
+
+    @Test
+    fun train_amountOfManaPresentLessThanMinimum() {
+        evilWizard.mana = 5
+        evilWizard.spellPower = 0
+        evilWizard.train()
+        assertEquals(1, evilWizard.spellPower)
+        assertEquals(0, evilWizard.mana) // mana should decrease by 5 and spelll power increased by 1
+    }
 }
